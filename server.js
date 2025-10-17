@@ -1,5 +1,6 @@
 // server.js
 const express = require('express');
+const cors = require('cors'); // New dependency
 const path = require('path');
 const session = require('express-session');
 require('dotenv').config(); 
@@ -9,6 +10,17 @@ const { passport, isAuthenticated } = require('./auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// --- CORS Middleware ---
+const corsOptions = {
+    origin: 'https://jjhavok.github.io', // ONLY allow requests from your GitHub Pages URL
+    credentials: true, // IMPORTANT: Allows cookies (sessions) to be passed
+};
+app.use(cors(corsOptions));
+// -----------------------
+
+// --- Middlewares (Passport, Session, etc. follow here) ---
+
 
 // --- Middlewares ---
 
