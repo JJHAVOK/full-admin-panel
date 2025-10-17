@@ -46,7 +46,7 @@ app.get('/login', (req, res) => {
 // 2. POST: Handle Login Submission
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/dashboard',
-    failureRedirect: '/login?error=1',
+    failureRedirect: '/login?error=1', 
 }));
 
 // 3. GET: Logout
