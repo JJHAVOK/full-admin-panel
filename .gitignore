@@ -1,0 +1,10 @@
+# .gitignore
+# Dependencies
+/node_modules
+
+# Environment/Secret Files
+.env
+
+# Logs and other OS files
+npm-debug.log*
+.DS_Store 
